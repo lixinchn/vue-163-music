@@ -1,23 +1,34 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <Headers></Headers>
+    <Contents></Contents>
+    <Footers></Footers>
   </div>
 </template>
 
 <script>
+import Headers from './components/Headers'
+import Contents from './components/Contents'
+import Footers from './components/Footers'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Headers,
+    Contents,
+    Footers,
+  }
 }
 </script>
 
 <style>
+* {
+  font-family: microsoft yahei;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: 0px 0px 10px 7px rgb(225, 225, 226);
 }
 </style>
