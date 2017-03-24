@@ -11,7 +11,7 @@
          </dl>
       </div>
       <div class="slider">
-         后面再写滚动组件
+         <Slider v-bind="setting"></Slider>
       </div>
       <div class="recomand">
          <h1>推荐歌单</h1>
@@ -46,14 +46,25 @@
 </template>
 <script >
    import Cover from './Cover'
+   import Slider from './Slider'
+
    export default {
      name: 'mains',
      components: {
-       Cover
+       Cover,
+       Slider,
      },
      data () {
        return {
-         app: '网易云音乐'
+         app: '网易云音乐',
+         setting: {
+            styleObject: {
+               width: '750',
+               height: '250',
+            },
+            imgSrc: ['static/img/1-1.jpg', 'static/img/1-2.jpg', 'static/img/1-3.jpg', 'static/img/1-4.jpg', 'static/img/1-5.jpg'],
+            interval: 4000,
+         }
        }
      }
    }
@@ -96,10 +107,7 @@
    color: rgb(198,47,47);
    }
    .slider{
-   height: 250px;
-   width: 100%;
-   text-align: center;
-   line-height: 250px;
+     margin-top: 20px;
    }
    .recomand{
    width: 100%;
