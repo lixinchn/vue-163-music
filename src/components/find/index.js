@@ -7,12 +7,41 @@ import New from './new'
 import Singer from './singer'
 
 
-export default {
-  Recommend,
-  Song,
-  Nav,
-  Station,
-  Rank,
-  New,
-  Singer,
+export default{
+  path: '/find',
+  name: 'find',
+  component: Nav,
+  redirect: '/find/recommend',
+  children: [
+    {
+      path: 'recommend',
+      name: 'recommend',
+      component: Recommend
+    },
+    {
+      path: 'song',
+      name: 'song',
+      component: Song
+    },
+    {
+      path: 'station',
+      name: 'station',
+      component: Station
+    },
+    {
+      path: 'singer',
+      name: 'singer',
+      component: Singer
+    },
+    {
+      path: 'new',
+      name: 'new',
+      component: New
+    },
+    {
+      path: 'rank',
+      name: 'rank',
+      component: Rank
+    }
+  ]
 }

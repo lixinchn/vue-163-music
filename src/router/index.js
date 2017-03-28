@@ -1,59 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import NotFound from '../components/find/not-found'
-import find from '../components/find/index.js'
+
+
+import Find from '../components/find/index.js'
+import Personal from '../components/personal/index.js'
+import Cloud from '../components/cloud/index.js'
+import Download from '../components/download/index.js'
+import Friend from '../components/friend/index.js'
+import Local from '../components/local/index.js'
+import Mv from '../components/mv/index.js'
+import Singer from '../components/singer/index.js'
+import Station from '../components/station/index.js'
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: find.Nav,
-      redirect: '/home/recommend',
-      children: [
-        {
-          path: 'recommend',
-          name: 'recommend',
-          component: find.Recommend,
-        },
-        {
-          path: 'song',
-          name: 'song',
-          component: find.Song,
-        },
-        {
-          path: 'station',
-          name: 'station',
-          component: find.Station,
-        },
-        {
-          path: 'singer',
-          name: 'singer',
-          component: find.Singer,
-        },
-        {
-          path: 'new',
-          name: 'new',
-          component: find.New,
-        },
-        {
-          path: 'rank',
-          name: 'rank',
-          component: find.Rank,
-        },
-      ],
-    },
-    {
-      path: '/',
-      redirect: 'home/recommend',
-    },
+    Find,
+    Personal,
+    Cloud,
+    Download,
+    Friend,
+    Local,
+    Mv,
+    Singer,
+    Station,
     {
       path: '*',
-      name: 'NotFound',
-      component: NotFound,
+      redirect: '/find/recommend',
     }
   ]
 })
