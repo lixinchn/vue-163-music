@@ -12,6 +12,7 @@ import Local from '../components/local/index.js'
 import Mv from '../components/mv/index.js'
 import Singer from '../components/singer/index.js'
 import Station from '../components/station/index.js'
+import Search from '../components/search/index.js'
 
 
 Vue.use(Router)
@@ -27,6 +28,7 @@ export default new Router({
     Mv,
     Singer,
     Station,
+    Search,
     {
       path: '*',
       redirect: '/find/recommend',
